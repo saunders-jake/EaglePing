@@ -5,18 +5,19 @@ Employer requested a script that
   - Can operate on Windows and Linux operating systems.
   
   
-# Instructions
+# Dependencies
 
-Install the single dependency
 
 ```
 pip install pythonping
 ```
 
 
-Working as of Python 3.8.3
 
 # TODO
 - Add logging capibility
 - Allow an option to customize a certain amount of time for the script to run instead of relying on user input
 
+Note: While TCP/UDP packets can be freely created on unprivileged processes, crafting ICMP packets requires root/administrator privilege. Therefore, this program MUST BE ROOT in order to function properly.
+
+Working as of Python 3.8.3
