@@ -1,7 +1,6 @@
 from pythonping import ping
 from time import sleep, localtime, strftime
-import time
-import sys
+import sys,time
 print("##########################")
 print("........EAGLE PING........")
 print("##########################")
@@ -59,3 +58,4 @@ sys.exit()
 #infinate While Loops
 #Commenting
 #Logging technique
+
