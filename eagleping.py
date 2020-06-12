@@ -42,11 +42,11 @@ while True:
   try:
     for q in range(len(iplst)):
       response = ping(iplst[q],verbose=True,count=packettotal) #Iterates though the iplst list, pinging each address x amount of times (determined by packtettotal), and displays output to terminal.
+      roundcounter += 1
       for i in range(packettotal):
         if "Reply from" not in str(response._responses[i]):
           timestamp = strftime("%d %b %Y %H:%M:%S", localtime()) #Creates the timestamp used in the log
-          log.write("{}   {}   {}\n".format(timestamp, iplst[q], response._responses[q])) #Writes 
-    roundcounter += 1
+          log.write("{}   {}   {}   Round: {}\n".format(timestamp, iplst[q], response._responses[q], roundcounter))
     print("Round {} complete".format(roundcounter))
     time.sleep(pingint-.5) #Pauses the program for x amount of seconds (determined by the user input from pingint) between rounds of pings.
   except KeyboardInterrupt:
