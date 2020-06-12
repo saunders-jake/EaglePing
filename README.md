@@ -20,6 +20,4 @@ pip install pythonping
 - Ping subnets
 - Add round to log output
 
-Note: While TCP/UDP packets can be freely created on unprivileged processes, crafting ICMP packets requires root/administrator privilege. Therefore, this program MUST BE ROOT in order to function properly.
-
 Working as of Python 3.8.3
