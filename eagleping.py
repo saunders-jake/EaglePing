@@ -1,6 +1,6 @@
 from pythonping import ping
 from time import sleep, localtime, strftime
-import sys,time
+import sys, time
 print("##########################")
 print("........EAGLE PING........")
 print("##########################")
@@ -41,21 +41,16 @@ print("")
 while True:
   try:
     for q in range(len(iplst)):
-      response = ping(iplst[q],verbose=False,count=packettotal) #Iterates though the iplst list, pinging each address x amount of times (determined by packtettotal), and displays output to terminal.
-      if "Reply from" not in str(response._responses):
-        for i in range(packettotal):
+      response = ping(iplst[q],verbose=True,count=packettotal) #Iterates though the iplst list, pinging each address x amount of times (determined by packtettotal), and displays output to terminal.
+      for i in range(packettotal):
+        if "Reply from" not in str(response._responses[i]):
           timestamp = strftime("%d %b %Y %H:%M:%S", localtime()) #Creates the timestamp used in the log
-          log.write("{}   {}   {}\n".format(timestamp, iplst[q], response._responses[q]))
-    time.sleep(pingint-.5) #Pauses the program for x amount of seconds (determined by the user input from pingint) between rounds of pings.
+          log.write("{}   {}   {}\n".format(timestamp, iplst[q], response._responses[q])) #Writes 
     roundcounter += 1
     print("Round {} complete".format(roundcounter))
+    time.sleep(pingint-.5) #Pauses the program for x amount of seconds (determined by the user input from pingint) between rounds of pings.
   except KeyboardInterrupt:
     break #Makes the program quit once the user hits the proper break key
 print("\nCompleted {} rounds".format(roundcounter))
 print("Quitting program...\n")
 sys.exit()
-
-#infinate While Loops
-#Commenting
-#Logging technique
-
