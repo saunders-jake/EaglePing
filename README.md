@@ -20,6 +20,6 @@ pip install pythonping
 - Ping subnets
 - Add round to log output
 
-Notes:
+# Notes:
 The shell script probably wont be completed.
 Working as of Python 3.8.3
